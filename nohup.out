@@ -1,0 +1,87 @@
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+
+[30m[42m SERVER STARTED [49m[39m
+> Watching files for changes...
+
+[32minfo[39m: serving app on http://0.0.0.0:3333
+events.js:187
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:3333
+    at Server.setupListenHandle [as _listen2] (net.js:1300:14)
+    at listenInCluster (net.js:1348:12)
+    at doListen (net.js:1487:7)
+    at processTicksAndRejections (internal/process/task_queues.js:81:21)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (net.js:1327:8)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21) {
+  code: 'EADDRINUSE',
+  errno: 'EADDRINUSE',
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3333
+}
+[31mApplication crashed, make sure to kill all related running process, fix the issue and re-run the app[39m
+events.js:187
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+Emitted 'error' event on ReadStream instance at:
+    at internal/fs/streams.js:167:12
+    at FSReqCallback.wrapper [as oncomplete] (fs.js:470:5) {
+  errno: -9,
+  code: 'EBADF',
+  syscall: 'read'
+}
+events.js:187
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+Emitted 'error' event on ReadStream instance at:
+    at internal/fs/streams.js:167:12
+    at FSReqCallback.wrapper [as oncomplete] (fs.js:470:5) {
+  errno: -9,
+  code: 'EBADF',
+  syscall: 'read'
+}

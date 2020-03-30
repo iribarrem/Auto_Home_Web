@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Auto Home</title>
+
+    @include('layouts/icons')
+
+    {{ style('vendor/fontawesome-free/css/all.min.css') }}
+    {{ style('vendor/datatables/dataTables.bootstrap4.css') }}
+    {{ style('css/sb-admin.css') }}
+    {{ style('css/custom.css') }}
+    {{ style('https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css') }}
+
+  </head>
+  
+  <body>
+    @include('layouts/navbar')
+    
+    <div id="wrapper">
+      @include('layouts/sidebar')
+      <div class="container-fluid">
+        @!section('content')    
+      </div>
+    </div>
+  </body>
+</html>

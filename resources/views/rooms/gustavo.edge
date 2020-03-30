@@ -1,0 +1,111 @@
+@layout('layouts/main')
+
+@section('content')
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col mt-4">
+        <div class="card text-center">
+          <div class="card-header">
+            <i class="fas fa-snowflake"></i>
+            Ar-condicionado
+          </div>
+
+          <div class="card-body text-center">
+            <div class="col-md-12 mb-2">
+              <input 
+                type="checkbox" 
+                id="ac_Power_Btn"
+                checked data-toggle="toggle" 
+                data-on="<i class='fas fa-power-off mr-2'></i>Desligar" data-onstyle="danger"
+                data-off="<i class='fas fa-power-off mr-2'></i>Ligar" data-offstyle="primary"
+              >
+              <button id="ACMode_Btn" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id="ACMode_Label">Aquecer</span>
+              </button>
+              <div class="dropdown-menu" id="ACMode_Btn">
+                <button id="heat_Btn" onclick="buttonClick(this)" class="dropdown-item">
+                  <i class="fas fa-sun mr-1"></i>  Aquecer
+                </button>
+                <button id="cool_Btn" onclick="buttonClick(this)" class="dropdown-item">
+                  <i class="fas fa-snowflake mr-1"></i>  Esfriar
+                </button>
+                <button id="dry_Btn" onclick="buttonClick(this)" class="dropdown-item">
+                  <i class="fas fa-tint-slash mr-1"></i>  Secar
+                </button>
+                <button id="fan_Btn" onclick="buttonClick(this)" class="dropdown-item">
+                  <i class="fas fa-fan mr-1"></i>  Ventilar
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <button id="ac_Temp_Dec" onclick="buttonClick(this)" type="button" class="btn btn-primary">
+                <i class="fas fa-minus"></i>
+              </button>
+              <div class="borderexample btn ml-1 mr-1" style="font-size: 20px" >
+                <span id="ac_Temp_Label">24</span> °C
+              </div>
+              <button id="ac_Temp_Inc" onclick="buttonClick(this)" type="button" class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <input 
+                type="checkbox" 
+                id="ac_Swing_Btn"
+                checked data-toggle="toggle" 
+                data-on="<i class='fas fa-sort mr-2'></i>Oscilar" data-onstyle="success"
+                data-off="<i class='fas fa-sort mr-2'></i>Oscilar" data-offstyle="primary"
+              >
+              <button id="ac_Fan_Btn" type="button" onclick="buttonClick(this)" class="btn btn-primary">
+                <i class="fas fa-fan"></i>
+                <span id="ac_Fan_Label" class="ml-1" >Velocidade 1</span>
+              </button>
+            </div>
+
+            <div class="col-md-12 mb-2">
+              <input 
+                type="checkbox" 
+                id="ac_Turbo_Btn"
+                checked data-toggle="toggle" 
+                data-on="<i class='fas fa-bolt mr-2'></i>Turbo" data-onstyle="warning"
+                data-off="<i class='fas fa-bolt mr-2'></i>Turbo" data-offstyle="primary"
+              >
+              <input 
+                type="checkbox" 
+                id="ac_LED_Btn"
+                checked data-toggle="toggle" 
+                data-on="<i class='fas fa-lightbulb mr-2'></i>LED" data-onstyle="success"
+                data-off="<i class='far fa-lightbulb mr-2'></i>LED" data-offstyle="primary"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mt-4">
+        <div class="card text-center">
+          <div class="card-header">
+            Equipamentos
+          </div>
+
+          <div class="card-body text-center">
+            <div class="col-md-12 mb-2">
+              <input 
+                type="checkbox"
+                id="light_Btn"
+                checked data-toggle="toggle" 
+                data-on="<i class='fas fa-lightbulb mr-2'></i>Luz" data-onstyle="warning"
+                data-off="<i class='fas fa-lightbulb mr-2'></i>Luz" data-offstyle="primary"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  @include('layouts/scripts')
+  {{ script('js/gustavo_room.js') }}
+@endsection
