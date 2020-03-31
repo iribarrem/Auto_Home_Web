@@ -1,31 +1,10 @@
-# Adonis fullstack application
+#   Auto Home - Automação Residencial Personalizada
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+Projeto de automação realizado por Gustavo Iribarrem
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+## Tecnologias utilizadas
 
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
+1. NodeJS (AdonisJS)
+2. MQTT
+3. Node-Red
+4. ESP boards: ESP011 e ESP32 

@@ -1,0 +1,29 @@
+@layout('layouts/main')
+
+@section('content')
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col mt-4">
+        <div class="card text-center">
+          <div class="card-header">
+            Equipamentos
+          </div>
+
+          <div class="card-body text-center">
+            <div class="col-md-12 mb-2">
+              <input 
+                type="checkbox"
+                id="light_Btn"
+                checked data-toggle="toggle" 
+                data-on="<i class='fas fa-lightbulb mr-2'></i>Luz" data-onstyle="warning"
+                data-off="<i class='fas fa-lightbulb mr-2'></i>Luz" data-offstyle="primary">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  @include('layouts/scripts')
+  {{ script('js/gladis_room.js') }}
+@endsection

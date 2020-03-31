@@ -18,3 +18,5 @@ const Route = use('Route')
 
 Route.on('/').render('index')
 Route.on('rooms/gustavo').render('rooms/gustavo')
+Route.on('rooms/gladis').render('rooms/gladis')
+
