@@ -1,10 +1,11 @@
-#   Auto Home - Automação Residencial Personalizada
+# Auto Home - Automação Residencial Personalizada
 
-Projeto de automação realizado por Gustavo Iribarrem
+  Projeto de automação realizado por Gustavo Iribarrem
+  Este repositório é referente ao servidor Web baseado em NodeJS utilizando o framework AdonisJS
 
-## Tecnologias utilizadas
+  ## Tecnologias utilizadas
 
-1. NodeJS (AdonisJS)
-2. MQTT
-3. Node-Red
-4. ESP boards: ESP011 e ESP32 
+    1. NodeJS (AdonisJS)
+    2. MQTT
+    3. Node-Red
+    4. ESP boards: ESP01 e ESP32 
