@@ -19,4 +19,13 @@ const Route = use('Route')
 Route.on('/').render('index')
 Route.on('rooms/gustavo').render('rooms/gustavo')
 Route.on('rooms/gladis').render('rooms/gladis')
+Route.on('admin/user_manager').render('admin/user_manager')
 
+Route
+  .post('login', 'UserController.login')
+  .middleware('guest')
+
+Route.post('/admin/user', 'UserController.create')
+
+Route.resource('permission', 'PermissionController').apiOnly().middleware('auth')
+Route.resource('/roles', 'RoleController').apiOnly().middleware('auth')

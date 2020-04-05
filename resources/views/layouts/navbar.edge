@@ -23,10 +23,15 @@
           <i class="fas fa-user-circle fa-lg"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+        @loggedIn
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Sair</a>
+        @else
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">Entrar</a>
+        @endloggedIn
       </div>
     </li>
   </ul>
 </nav>
 
+@include('layouts/login_modal')
 @include('layouts/logout_modal')
