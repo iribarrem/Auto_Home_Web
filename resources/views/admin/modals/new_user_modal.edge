@@ -5,40 +5,41 @@
         <h5 class="modal-title" id="exampleModalLabel">Cadastrar Usuário</h5>
       </div>
       <div class="modal-body">
-        <form id="new_user_form" role="form" method="POST" action="user">
+        <form id="new_user_form" role="form" method="POST" action="user_manager">
           <div class="row">
             <div class="form-group col md-6">
-              <input class="form-control" id="name" name="name" type="text" placeholder="Nome">
+              <input class="form-control" id="name" name="name" type="text" placeholder="Nome" required>
             </div>
             <div class="form-group col md-6">
-              <input class="form-control" id="last_name" name="last_name" type="text" placeholder="Sobrenome">
+              <input class="form-control" id="last_name" name="last_name" type="text" placeholder="Sobrenome" required>
             </div>
           </div>
           <div class="row">
             <div class="form-group col md-6">
-              <input class="form-control" id="email" name="email" type="email" placeholder="Endereço de e-mail">
+              <input class="form-control" id="email" name="email" type="email" placeholder="Endereço de e-mail" required>
             </div>
           </div>
           <div class="row">
             <div class="form-group col md-6">
-              <input class="form-control" id="phone" name="phone" type="text" placeholder="Celular">
+              <input class="form-control" id="phone" name="phone" type="text" placeholder="Celular" required>
             </div>
           </div>
           <div class="row">
             <div class="form-group col md-6">
-              <input class="form-control" id="password" name="password" type="password" placeholder="Digite a senha">
+              <input class="form-control" id="password" name="password" type="password" placeholder="Digite a senha" required>
             </div>
             <div class="form-group col md-6">
-              <input class="form-control" id="confirmPassword" type="password" placeholder="Digite novamente">
+              <input class="form-control" id="confirmPassword" type="password" placeholder="Digite novamente" required>
             </div>
           </div>
           <div class="row">
             <div class="form-group col md-6">
-              <label for="role">Tipo de Usuário</label>
-              <select id="role" name="role" class="form-control">
-                <option value="admin">Administrador</option>
+              {{--  <label for="role">Tipo de Usuário</label>  --}}
+              <select id="permission" name="permission" class="form-control" required>
+                <option value="" selected disabled hidden>Tipo de Usuário</option>
+                <option value="administrador">Administrador</option>
                 <option value="morador">Morador</option>
-                <option value="visitor">Visitante</option>
+                <option value="visitante">Visitante</option>
               </select>
             </div>
           </div>
@@ -50,3 +51,5 @@
     </div>
   </div>
 </div>
+
+{{ script('js/scripts/passwordValidation.js') }} 

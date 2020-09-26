@@ -6,15 +6,22 @@
     <a href="#" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#newUserModal">Cadastrar Usuário</a>
   </div>
 
+  @if(params.registered)
+    <div class="alert alert-success" role="alert">
+      {{ params.role }} cadastrado com sucesso!
+    </div>
+  @endif
+
   <div class="card shadow mb-4">
     <div class="card-header">
       <h6 class="m-0 font-weight-bold text-primary">Lista de Usuários</h6>
     </div>
     <div class="card-body">
-      <div class="table-responsive">
+      <div id="user_table" class="table-responsive">
         <table class="table table-bordered text-center" id="a" width="100%" cellspacing="0"">
           <thead>
             <tr>
+              <th>ID</th>
               <th>Nome</th>
               <th>E-mail</th>
               <th>Celular</th>
@@ -23,33 +30,28 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Gustavo Ribeiro Iribarrem</td>
-              <td>gustavo.iribarrem@gmail.com</td>
-              <td>53981090773</td>
-              <td>Administrador</td>
-              <td>
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger">Apagar</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Gladis Elena Schellin Ribeiro</td>
-              <td>gladisesribeiro@gmail.com</td>
-              <td>53984077007</td>
-              <td>Morador</td>
-              <td>
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger">Apagar</button>
-              </td>
-            </tr>
+            @each(user in users)
+              <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }} {{ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.role.name }}</td>
+                <td>
+                  <a href="#" id="editBtn" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#editUserModal" data-user_id="{{ user.id }}">Editar</a>
+                  <a href="#" id="deleteBtn" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteUserModal" data-user_id="{{ user.id }}">Apagar</a>
+                </td>
+              </tr>
+            @endeach
           </tbody>
         </table>
       </div>
     </div>
   </div>
 
-  {{ script('user_manager.js ')}}
   @include('layouts/scripts')
-  @include('admin/new_user_modal')
+  {{ script('js/user_manager.js') }}
+  @include('admin/modals/new_user_modal')
+  @include('admin/modals/edit_user_modal')
+  @include('admin/modals/delete_user_modal')
 @endsection

@@ -11,7 +11,7 @@ class PermissionController {
       const permission = Permission.create(data)
       return permission
   }
-
+  
   async update({ request, params }) {
     const data = request.only(['name', 'slug', 'description'])
 
@@ -30,5 +30,4 @@ class PermissionController {
 
     permission.delete()
   }
-
 }

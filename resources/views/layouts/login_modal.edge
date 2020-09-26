@@ -8,14 +8,14 @@
         </button>
       </div>
       <div class="modal-body text-center">
-        <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Digite seu e-mail..."><br>
-        <input type="password" class="form-control form-control-user mb-1" id="exampleInputPassword" placeholder="Senha">
+        <form id="login_form" method="POST" action="/admin/login">
+          <input type="email" class="form-control form-control-user" id="login_email" name="login_email" aria-describedby="emailHelp" placeholder="Digite seu e-mail..."><br>
+          <input type="password" class="form-control form-control-user mb-1" id="login_password" name="login_password" placeholder="Senha">
+        </form>
         <a  href="#" data-toggle="modal" data-target="#passModal">Esqueci minha senha</a>
       </div>
       <div class="modal-footer">
-        <a href="/" class="btn btn-primary btn-user btn-block">
-          Login
-        </a>
+        <input class="btn btn-success" form="login_form" type="submit" value="Login">
       </div>
     </div>
   </div>

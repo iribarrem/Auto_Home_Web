@@ -1,7 +1,13 @@
 @layout('layouts/main')
 
 @section('content')
-    <h1>Index</h1>
+    <h1>
+      @loggedIn
+        Olá, {{ auth.user.name }} {{ auth.user.last_name }}
+      @else
+        Por favor, realize login
+      @endloggedIn
+    </h1>
 
     @include('layouts/scripts')
 @endsection

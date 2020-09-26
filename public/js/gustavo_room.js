@@ -12,7 +12,7 @@ $.ajax({
   type: "GET",
   data: { topic: "/Gustavo" },
   success: (res) => {
-    $("#ac_Temp_Label").html(res.Temperature);
+    $("#ac_Temp_Label").html(res.AC.Temperature);
 
     switch (res.AC.Power) {
       case "ON":

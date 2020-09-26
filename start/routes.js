@@ -19,13 +19,18 @@ const Route = use('Route')
 Route.on('/').render('index')
 Route.on('rooms/gustavo').render('rooms/gustavo')
 Route.on('rooms/gladis').render('rooms/gladis')
-Route.on('admin/user_manager').render('admin/user_manager')
 
-Route
-  .post('login', 'UserController.login')
-  .middleware('guest')
+Route.group(() => {
+  Route.get('admin/user_manager', 'UserController.list')
+  Route.get('admin/user_manager/:id', 'UserController.get')
+  Route.post('admin/user_manager', 'UserController.create')
+  Route.post('admin/user_manager/:id', 'UserController.edit')
+  Route.post('admin/user_manager/delete/:id', 'UserController.delete')
+})
+  //.middleware('auth')
 
-Route.post('/admin/user', 'UserController.create')
+Route.post('admin/login', 'UserController.login')
+Route.get('admin/logout', 'UserController.logout')
 
 Route.resource('permission', 'PermissionController').apiOnly().middleware('auth')
 Route.resource('/roles', 'RoleController').apiOnly().middleware('auth')

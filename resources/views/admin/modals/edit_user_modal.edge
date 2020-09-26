@@ -1,0 +1,47 @@
+<div class="modal fade" id="editUserModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Usuário</h5>
+      </div>
+      <div class="modal-body">
+        <form id="edit_user_form" role="form" method="POST">
+          <div class="row">
+            <div class="form-group col md-6">
+              <input class="form-control" id="edit_email" name="edit_email" type="email" placeholder="Endereço de e-mail" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col md-6">
+              <input class="form-control" id="edit_phone" name="edit_phone" type="text" placeholder="Celular" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col md-6">
+              <input class="form-control" id="edit_password" name="edit_password" type="password" placeholder="Digite a senha" required>
+            </div>
+            <div class="form-group col md-6">
+              <input class="form-control" id="edit_confirmPassword" type="password" placeholder="Digite novamente" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col md-6">
+              <select id="edit_role" name="edit_role" class="form-control" required>
+                <option value="" selected disabled hidden>Tipo de Usuário</option>
+                <option value="admin">Administrador</option>
+                <option value="morador">Morador</option>
+                <option value="visitante">Visitante</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <input class="btn btn-success" form="edit_user_form" type="submit" value="Salvar">
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ script('js/scripts/passwordValidation.js') }}
+{{ script('js/admin/modals/edit_user_modal.js') }}
