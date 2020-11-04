@@ -1,7 +1,7 @@
 'use strict'
 
 const User = use("App/Models/User")
-//const Role = use('Role')
+const Role = use('Role')
 
 class UserController {
   async get({ params }){
@@ -18,19 +18,12 @@ class UserController {
 
 
   async create({ request, response }){
-    const user_data = request.only(["name", "last_name", "email", "password", "phone", "permission"])
-
-    switch(user_data.permission){
-      case "admin":     user_data.permission = 1
-                        break
-      case "morador":   user_data.permission = 2
-                        break
-      case "visitante": user_data.permission = 3
-                        break
-    }
-
+    const user_data = request.only(["name", "last_name", "email", "password", "phone"])
+    const user_role = request.only(["role"])
     const user = await User.create(user_data)
     
+    user.roles().attach(user_role)
+
     return response.route('user_manager', {registered: true})
   }
 

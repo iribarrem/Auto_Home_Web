@@ -26,11 +26,10 @@ Route.group(() => {
   Route.post('admin/user_manager', 'UserController.create')
   Route.post('admin/user_manager/:id', 'UserController.edit')
   Route.post('admin/user_manager/delete/:id', 'UserController.delete')
+  Route.post('admin/login', 'UserController.login')
+  Route.get('admin/logout', 'UserController.logout')
 })
   //.middleware('auth')
-
-Route.post('admin/login', 'UserController.login')
-Route.get('admin/logout', 'UserController.logout')
 
 Route.resource('permission', 'PermissionController').apiOnly().middleware('auth')
 Route.resource('/roles', 'RoleController').apiOnly().middleware('auth')
